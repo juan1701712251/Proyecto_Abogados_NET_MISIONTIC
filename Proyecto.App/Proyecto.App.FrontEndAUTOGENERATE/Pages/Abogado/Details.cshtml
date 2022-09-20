@@ -1,0 +1,43 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Abogado.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Abogado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abogado.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abogado.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abogado.apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abogado.apellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abogado.numeroTarjetaProf)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abogado.numeroTarjetaProf)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abogado.anioIngreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abogado.anioIngreso)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Abogado.abogadoId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

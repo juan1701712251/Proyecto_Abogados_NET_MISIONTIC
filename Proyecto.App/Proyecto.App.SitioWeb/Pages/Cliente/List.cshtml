@@ -1,0 +1,79 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.ListModel
+@{
+}
+<!-- Código que muestre los clientes con nombre, apellido, edad y Genero-->
+
+<h1>Listado Clientes</h1>
+<!-- Botón crear cliente -->
+<a asp-page="./Create" class="btn btn-info">Crear Cliente</a>
+<br></br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Edad
+            </th>
+            <th>
+                Genero
+            </th>
+            <th>
+                Pais
+            </th>
+            <th>
+                Ciudad
+            </th>
+            <th>
+                Casos
+            </th>
+            <th>
+                Editar
+            </th>
+            <th>
+                Borrar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.clientes)
+        {
+            <tr>
+                <td>
+                    @item.nombre
+                </td>
+                <td>
+                    @item.apellido
+                </td>
+                <td>
+                    @item.edad
+                </td>
+                <td>
+                    @item.genero
+                </td>
+                <td>
+                    @item.paisId - @item.pais.nombrePais
+                </td>
+                <td>
+                    @item.ciudadId - @item.ciudad.nombreCiudad
+                </td>
+                <td>
+                    @for (int i = 0; i < item.casos.Count; i++)
+                    {   
+                        <p>@item.casos[i].descripcionCaso</p>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.clienteId">Editar</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.clienteId">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>

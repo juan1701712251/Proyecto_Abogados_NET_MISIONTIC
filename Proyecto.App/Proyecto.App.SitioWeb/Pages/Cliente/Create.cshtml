@@ -1,0 +1,46 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.CreateModel
+@{
+}
+<!-- Formulario de creación de un nuevo cliente con nombre, apellido, edad y genero -->
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="cliente.nombre" class="control-label"></label>
+        <input asp-for="cliente.nombre" class="form-control" />
+        <span asp-validation-for="cliente.nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="cliente.apellido" class="control-label"></label>
+        <input asp-for="cliente.apellido" class="form-control" />
+        <span asp-validation-for="cliente.apellido" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="cliente.edad" class="control-label"></label>
+        <input asp-for="cliente.edad" class="form-control" />
+        <span asp-validation-for="cliente.edad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="cliente.genero" class="control-label"></label>
+        <input asp-for="cliente.genero" class="form-control" />
+        <span asp-validation-for="cliente.genero" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="cliente.paisId" class="control-label"></label>
+        <select asp-for="cliente.paisId" class="form-control">
+            @foreach (var pais in Model.paises)
+            {
+                <option value="@pais.paisId">@pais.nombrePais</option>
+            }
+        </select>
+        <span asp-validation-for="cliente.paisId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="cliente.ciudadId" class="control-label"></label>
+        <input asp-for="cliente.ciudadId" class="form-control" />
+        <span asp-validation-for="cliente.ciudadId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+    </div>
+</form>

@@ -1,0 +1,61 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Caso.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Caso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Caso.clienteId" class="control-label"></label>
+                <select asp-for="Caso.clienteId" class ="form-control" asp-items="ViewBag.clienteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caso.abogadoId" class="control-label"></label>
+                <select asp-for="Caso.abogadoId" class ="form-control" asp-items="ViewBag.abogadoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caso.faseCasoId" class="control-label"></label>
+                <select asp-for="Caso.faseCasoId" class ="form-control" asp-items="ViewBag.faseCasoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caso.fechaInicioCaso" class="control-label"></label>
+                <input asp-for="Caso.fechaInicioCaso" class="form-control" />
+                <span asp-validation-for="Caso.fechaInicioCaso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caso.descripcionCaso" class="control-label"></label>
+                <input asp-for="Caso.descripcionCaso" class="form-control" />
+                <span asp-validation-for="Caso.descripcionCaso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caso.cantidadTestigos" class="control-label"></label>
+                <input asp-for="Caso.cantidadTestigos" class="form-control" />
+                <span asp-validation-for="Caso.cantidadTestigos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caso.direccionJuzgadoAsignado" class="control-label"></label>
+                <input asp-for="Caso.direccionJuzgadoAsignado" class="form-control" />
+                <span asp-validation-for="Caso.direccionJuzgadoAsignado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

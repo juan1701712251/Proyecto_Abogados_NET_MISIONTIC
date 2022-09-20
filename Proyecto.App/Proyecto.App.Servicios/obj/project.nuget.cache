@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8irEWMNJEVbUaDMeGTRmg6Am/NXYZWKTTmPatfKk9mwPKAwXpBlhC4DtBf45x941seT5rHANSqmTVJ9O3QyoxQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\GOMEZ\\Desktop\\Proyecto_Ciclo_3_DOTNET3.1\\Proyecto.App\\Proyecto.App.Servicios\\Proyecto.App.Servicios.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GOMEZ\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\GOMEZ\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

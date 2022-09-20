@@ -1,0 +1,72 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Caso.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].abogado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].faseCaso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].fechaInicioCaso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].descripcionCaso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].cantidadTestigos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caso[0].direccionJuzgadoAsignado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Caso) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliente.clienteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.abogado.abogadoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.faseCaso.faseCasoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaInicioCaso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcionCaso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidadTestigos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccionJuzgadoAsignado)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.casoId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.casoId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.casoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

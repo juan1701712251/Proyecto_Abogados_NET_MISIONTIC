@@ -1,0 +1,54 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Cliente.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].genero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cliente) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.genero)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.clienteId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.clienteId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.clienteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

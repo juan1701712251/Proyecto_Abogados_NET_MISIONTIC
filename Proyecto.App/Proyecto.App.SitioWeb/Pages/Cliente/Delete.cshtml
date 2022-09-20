@@ -1,0 +1,12 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.DeleteModel
+@{
+}
+<!-- Formulario de confirmación para borrar cliente -->
+<form method="post">
+    <h1>¿Está seguro de que desea borrar el cliente?</h1>
+    <!-- Asignar Id del cliente a borrar -->
+    <input type="hidden" asp-for="cliente.clienteId" />
+    <input type="submit" value="Borrar" class="btn btn-danger" /> 
+    <a asp-page="/Cliente/List">Back to List</a>
+</form>

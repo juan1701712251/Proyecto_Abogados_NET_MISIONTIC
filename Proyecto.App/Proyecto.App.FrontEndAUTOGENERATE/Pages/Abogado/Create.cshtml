@@ -1,0 +1,49 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Abogado.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Abogado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Abogado.nombre" class="control-label"></label>
+                <input asp-for="Abogado.nombre" class="form-control" />
+                <span asp-validation-for="Abogado.nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abogado.apellido" class="control-label"></label>
+                <input asp-for="Abogado.apellido" class="form-control" />
+                <span asp-validation-for="Abogado.apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abogado.numeroTarjetaProf" class="control-label"></label>
+                <input asp-for="Abogado.numeroTarjetaProf" class="form-control" />
+                <span asp-validation-for="Abogado.numeroTarjetaProf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abogado.anioIngreso" class="control-label"></label>
+                <input asp-for="Abogado.anioIngreso" class="form-control" />
+                <span asp-validation-for="Abogado.anioIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

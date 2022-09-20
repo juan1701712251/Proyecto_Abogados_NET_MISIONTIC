@@ -1,0 +1,50 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Cliente.EditModel
+@using Proyecto.App.Dominio;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cliente.clienteId" />
+            <div class="form-group">
+                <label asp-for="Cliente.nombre" class="control-label"></label>
+                <input asp-for="Cliente.nombre" class="form-control" />
+                <span asp-validation-for="Cliente.nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.apellido" class="control-label"></label>
+                <input asp-for="Cliente.apellido" class="form-control" />
+                <span asp-validation-for="Cliente.apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.edad" class="control-label"></label>
+                <input asp-for="Cliente.edad" class="form-control" />
+                <span asp-validation-for="Cliente.edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.genero" class="control-label" asp-items="Html.GetEnumSelectList<Genero>()"></label>
+                <select asp-for="Cliente.genero" class="form-control" asp-items="Html.GetEnumSelectList<Genero>()"></select>
+                <span asp-validation-for="Cliente.genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

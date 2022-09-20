@@ -1,0 +1,54 @@
+@page
+@model Proyecto.App.FrontEndAUTOGENERATE.Pages_Abogado.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Abogado[0].nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abogado[0].apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abogado[0].numeroTarjetaProf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abogado[0].anioIngreso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Abogado) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numeroTarjetaProf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anioIngreso)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.abogadoId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.abogadoId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.abogadoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
